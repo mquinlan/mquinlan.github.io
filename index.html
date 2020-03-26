@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head><title>Record screen click</title>></head>
+    <head><title>Record screen click</title></head>
     <body>
-        <h3>Current mouse position:</h3>
-        <p id = "print_coords"></p>
-
         <p id = "image">
             <img src="../example_img.png" alt = "Example image" style = "float:left;">
         </p>
 
+        <h3>Current mouse position:</h3>
+        <p id = "print_coords"></p>
+
         <script>
             document.addEventListener('click', mouseClick);
-            let printCoords = document.querySelector('#print_coords');
+            var printCoords = document.querySelector('#print_coords');
+            var imgPosition = document.getElementById("image");
+            var imgTop   = imgPosition.offsetTop;
+            var imgLeft  = imgPosition.offsetLeft;
 
             function mouseClick(event) {
-                printCoords.innerText = `${event.clientX}, ${event.clientY}`;
+                printCoords.innerText = `${event.clientX - imgLeft}, ${event.clientY - imgTop}`;
             }
         </script>
     </body>
