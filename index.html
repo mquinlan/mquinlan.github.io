@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+    <head><title>Record screen click</title>></head>
+    <body>
+        <h3>Current mouse position:</h3>
+        <p id = "print_coords"></p>
+
+        <p id = "image">
+            <img src="../example_img.png" alt = "Example image" style = "float:left;">
+        </p>
+
+        <script>
+            document.addEventListener('click', mouseClick);
+            let printCoords = document.querySelector('#print_coords');
+
+            function mouseClick(event) {
+                printCoords.innerText = `${event.clientX}, ${event.clientY}`;
+            }
+        </script>
+    </body>
 </html>
