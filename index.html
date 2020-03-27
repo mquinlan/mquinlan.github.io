@@ -2,15 +2,15 @@
 <html>
     <head><title>Record screen click</title></head>
     <body>
-        <p id = "image">
+        <div id = "image">
             <img src="../example_img.png" alt = "Example image" style = "float:left;">
-        </p>
+        </div>
 
         <h3>Current mouse position:</h3>
         <p id = "print_coords"></p>
 
         <script>
-            document.addEventListener('click', mouseClick);
+            image.addEventListener('click', mouseClick);
             var printCoords = document.querySelector('#print_coords');
             var imgPosition = document.getElementById("image");
             var imgTop   = imgPosition.offsetTop;
